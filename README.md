@@ -1,4 +1,4 @@
-# 🐉 Kimi Clone Pro
+# 🐉 MA-AI Pro
 
 Free AI assistant with ZIP download, document generation, and dark theme.
 
