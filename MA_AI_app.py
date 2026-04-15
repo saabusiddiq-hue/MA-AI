@@ -18,7 +18,7 @@ from reportlab.lib.styles import getSampleStyleSheet
 import pandas as pd
 import numpy as np
 
-st.set_page_config(page_title="Kimi Clone Pro", page_icon="🐉", layout="wide")
+st.set_page_config(page_title="MA-AI Pro", page_icon="🐉", layout="wide")
 
 # Session state
 if 'messages' not in st.session_state:
@@ -52,7 +52,7 @@ def create_zip(files_dict):
 
 # Sidebar
 with st.sidebar:
-    st.markdown("<div style='text-align: center;'><div style='font-size: 60px;'>🐉</div><h2>KIMI CLONE PRO</h2></div>", unsafe_allow_html=True)
+    st.markdown("<div style='text-align: center;'><div style='font-size: 60px;'>🐉</div><h2>MA-AI PRO</h2></div>", unsafe_allow_html=True)
     
     if st.button("➕ New Chat", use_container_width=True):
         st.session_state.messages = []
@@ -69,7 +69,7 @@ with st.sidebar:
                 st.caption(f"📄 {f}")
         if st.button("⬇️ DOWNLOAD ZIP", use_container_width=True):
             zip_file = create_zip(st.session_state.generated_files)
-            st.download_button("📦 SAVE ZIP", zip_file, f"kimi_files_{int(time.time())}.zip", "application/zip")
+            st.download_button("📦 SAVE ZIP", zip_file, f"maai_files_{int(time.time())}.zip", "application/zip")
         if st.button("🗑️ Clear", use_container_width=True):
             st.session_state.generated_files = {}
             st.rerun()
@@ -110,7 +110,7 @@ with st.sidebar:
         st.rerun()
 
 # Main
-st.markdown("<h1 style='text-align: center;'>🐉 Kimi Clone Pro</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>🐉 MA-AI Pro</h1>", unsafe_allow_html=True)
 
 # Display messages
 for msg in st.session_state.messages:
@@ -118,16 +118,16 @@ for msg in st.session_state.messages:
         st.markdown(msg["content"])
 
 # Input
-prompt = st.chat_input("Type your message...")
+prompt = st.chat_input("Message MA-AI...")
 if prompt:
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
     
-    response = f"**Echo:** {prompt}\n\nFiles in ZIP: {len(st.session_state.generated_files)}"
+    response = f"**MA-AI:** {prompt}\n\nFiles in ZIP: {len(st.session_state.generated_files)}"
     st.session_state.messages.append({"role": "assistant", "content": response})
     with st.chat_message("assistant"):
         st.markdown(response)
 
 st.markdown("---")
-st.caption("🐉 Kimi Clone Pro | ZIP Ready")
+st.caption("🐉 MA-AI Pro | ZIP Ready | All Features Free")
